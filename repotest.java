@@ -9,6 +9,9 @@ public class repotest{
 		int intCount; 
 		for(intCount=0; intCount<10; intCount++){ 
 			con.println("90"); 
+			if(intCount<=5){
+				con.println("FTC"); 
+			}
 		}
 	}
 }
