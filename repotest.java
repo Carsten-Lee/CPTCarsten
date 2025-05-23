@@ -6,5 +6,9 @@ public class repotest{
 		con.println("Hello World"); 
 		con.println("TGIF"); 
 		con.println("CPT Time"); 
+		int intCount; 
+		for(intCount=0; intCount<10; intCount++){ 
+			con.println("90"); 
+		}
 	}
 }
