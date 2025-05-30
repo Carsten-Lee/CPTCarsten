@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class CPTCarsten{ 
 	public static void main(String[] args){
-		Console con = new Console(1920,1080);
+		Console con = new Console(1440,810);
 		
 		BufferedImage imgMenu = con.loadImage("MENU.png");
 		con.drawImage(imgMenu,0,0);
@@ -14,7 +14,7 @@ public class CPTCarsten{
 		String strName; 
 		if(chrMain=='1'){
 			con.setDrawColor(Color.BLACK); 
-			con.fillRect(0,0,1920, 1080);
+			con.fillRect(0,0,1440, 810);
 			con.println("What is your name?"); 
 			strName = con.readLine(); 
 			con.clear(); 
@@ -22,9 +22,10 @@ public class CPTCarsten{
 			String strQuizName; 
 			String strUserQuiz; 
 			TextInputFile quizlist = new TextInputFile("quizzes.txt"); 
+			con.println("Quizzes:");
 			while(quizlist.eof()==false){
 				strQuizName = quizlist.readLine(); 
-				con.println("Quizzes:\n"+strQuizName);
+				con.println(strQuizName);
 			}
 			con.println("\nEnter name of quiz:"); 
 			strUserQuiz = con.readLine(); 
@@ -64,11 +65,15 @@ public class CPTCarsten{
 					}
 				}
 			}
-
+				
 			// Step 5: Ask questions and calculate score
 			int intScore = 0;
 			for (int i = 0; i < strQuiz.length; i++) {
+				int intPercentage = (intScore/strQuiz.length)*100;
+				con.println("Name: "+strName+"     Quiz: "+strUserQuiz+"     Score: "+intPercentage+"\n");
+				
 				con.clear();
+				
 				con.println("Question " + (i + 1) + ": " + strQuiz[i][0]);
 				con.println("A) " + strQuiz[i][1]);
 				con.println("B) " + strQuiz[i][2]);
@@ -83,14 +88,12 @@ public class CPTCarsten{
 				} else {
 					con.println("Incorrect. Correct answer: " + strQuiz[i][5]);
 				}
-
 				con.println("Press any key to continue...");
 				con.getChar();
 			}
 
 			con.clear();
 			con.println("Quiz complete!");
-			con.println("Final Score for " + strName + ": " + intScore + " out of " + strQuiz.length);
 			
 		}
 		
