@@ -1,58 +1,68 @@
 Which one is a Drake song?
+musicartists/drake.png
 The Color Violet
 Unforgettable
 Hold On, We're Going Home
 Snooze 
 C
 Which one is a Newjeans song?
+musicartists/newjeans.png
 Set The Tone
 Hurt
 Blue Flame
 Magnetic 
 B
 Which one is a Babytron song?
+musicartists/babytron.png
 Stutter Flow
 Special K
 Troops
 200 Kash
 A
 Which one is a Bad Bunny song?
+musicartists/badbunny.png
 Ella Baila Sola
 LA MuDANZA
 Mafu
 Baile no Morro
 B
 Which one is a Justin Bieber song?
+musicartists/justinbieber.png
 All That Matters
 My Favorite Part
 So In Love
 Lost In Japan
 A
 Which one is a Joji song?
+musicartists/joji.png
 August
 Best Part
 golden hour
 CAN'T GET OVER YOU
 D
 Which one is a Ken Carson song?
+musicartists/kencarson.png
 Location
 The Race
 Money Spread
 Gunsmif
 C
-Which one is a greatestredefined song?
+Which one is a Osamason song?
+musicartists/osamason.png
 Pizza Time
 1of1
-options
+just score it
 Ambidextrous
 C
 Which one is a Brent Faiyaz song?
+musicartists/brentfaiyaz.png
 Paper Soldier
 Thinkin Bout You
 Not You Too
 Don't
 A
 Which one is a YOASOBI song?
+musicartists/yoasobi.png
 Dramaturgy
 KICK BACK
 Lost Umbrella
