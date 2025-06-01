@@ -1,0 +1,70 @@
+Which country is the Christ the Redeemer in?
+worldmonuments/christtheredeemer.png
+Argentina
+Portugal
+Brazil
+Mexico
+C
+Which country is the Royal Tombs in?
+worldmonuments/royaltombs.png
+Jordan
+Egypt
+Turkey
+Greece
+A
+Which country is the Angkor Wat in?
+worldmonuments/angkorwat.png
+Thailand
+Cambodia
+Vietnam
+Laos
+B
+Which country is the Sydney Opera House in?
+worldmonuments/sydneyopera.png
+New Zealand
+South Africa
+Australia
+Indonesia
+C
+Which country is the Himeji Castle in?
+worldmonuments/himejicastle.png
+South Korea
+Japan
+China
+Taiwan
+B
+Which country is the Burj Khalifa in?
+worldmonuments/burjkhalifa.png
+Qatar
+Saudi Arabia
+UAE
+Kuwait
+C
+Which country is the Mount Rushmore in?
+worldmonuments/mountrushmore.png
+USA
+Canada
+France
+United Kingdom
+A
+Which country is the Sagrada Familia in?
+worldmonuments/sagradafamilia.png
+Portugal
+Spain
+France
+Italy
+D
+Which country is the Stonehenge in?
+worldmonuments/stonehenge.png
+Wales
+England
+Ireland
+Scotland
+D
+Which country is the Chichen Itza in?
+worldmonuments/chichenitza.png
+Mexico
+Peru
+Colombia
+Ecuador
+A

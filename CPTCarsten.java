@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class CPTCarsten{ 
 	public static void main(String[] args){
-		Console con = new Console(1440,810);
+		Console con = new Console(1280,720);
 		
 		BufferedImage imgMenu = con.loadImage("MENU.png");
 		con.drawImage(imgMenu,0,0);
@@ -14,7 +14,7 @@ public class CPTCarsten{
 		String strName; 
 		if(chrMain=='1'){
 			con.setDrawColor(Color.BLACK); 
-			con.fillRect(0,0,1440, 810);
+			con.fillRect(0,0,1280, 720);
 			con.println("What is your name?"); 
 			strName = con.readLine(); 
 			con.clear(); 
@@ -94,12 +94,14 @@ public class CPTCarsten{
 				con.println("Press any key to continue...");
 				intPercentage = (int)(((double)intScore / (i+1)) * 100);
 				con.getChar();
+				con.setDrawColor(Color.BLACK); 
+				con.fillRect(0,80,200, 200);
 			}
 			con.setDrawColor(Color.BLACK); 
 			con.fillRect(0,80,200, 200);
 			con.clear();
 			con.println("Quiz complete!");
-			con.println("You scored "+intPercentage+"%"); 
+			con.println(strName+" scored "+intPercentage+"%"+" on "+strUserQuiz); 
 			
 		}
 		

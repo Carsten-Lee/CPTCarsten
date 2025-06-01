@@ -1,0 +1,70 @@
+Which player played for the Golden State Warriors?
+sportsplayers/goldenstate.png
+Stephen Curry
+LeBron James
+Kevin Durant
+Kobe Bryant
+A
+Which player played for the Kansas City Chiefs?
+sportsplayers/kansascity.png
+Josh Allen
+Patrick Mahomes
+Joe Burrow
+Aaron Rodgers
+B
+Which player played for the Miami Heat?
+sportsplayers/miamiheat.png
+Jayson Tatum
+Giannis Antetokounmpo
+Tyler Herro
+Anthony Davis
+C
+Which player played for the Dallas Cowboys?
+sportsplayers/dallascowboys.png
+Justin Jefferson
+CeeDee Lamb
+Tyreek Hill
+Stefon Diggs
+B
+Which player played for the Los Angeles Lakers?
+sportsplayers/losangeles.png
+Devin Booker
+Damian Lillard
+Paul George
+LeBron James
+D
+Which player played for the Buffalo Bills?
+sportsplayers/buffalobills.png
+Josh Allen
+Lamar Jackson
+Justin Fields
+Kirk Cousins
+A
+Which player played for the Milwaukee Bucks?
+sportsplayers/milwaukeebucks.png
+Kevin Durant
+Joel Embiid
+Giannis Antetokounmpo
+James Harden
+C
+Which player played for the San Francisco 49ers?
+sportsplayers/sanfrancisco.png
+Saquon Barkley
+Derrick Henry
+Alvin Kamara
+Christian McCaffrey
+D
+Which player played for the Phoenix Suns?
+sportsplayers/phoenixsuns.png
+Jalen Brunson
+Klay Thompson
+Devin Booker
+Jaylen Brown
+C
+Which player played for the Cincinnati Bengals?
+sportsplayers/cincinnatibengals.png
+Brock Purdy
+Tua Tagovailoa
+Trevor Lawrence
+Joe Burrow
+D
