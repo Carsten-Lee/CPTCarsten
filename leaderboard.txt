@@ -1,0 +1,2 @@
+Carsten  |  musicartists.txt  |  80 %
+Carsten  |  sportsplayers.txt  |  70 %
