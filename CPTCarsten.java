@@ -112,8 +112,10 @@ public class CPTCarsten{
 					intPercentage+=9999; 
 				}
 				
-				con.println("Quiz complete! Score added to leaderboard");
-				con.println("You scored "+intPercentage+"%"); 	
+				BufferedImage imgComplete = con.loadImage("COMPLETE.png");
+				con.drawImage(imgComplete,0,0);
+				con.repaint();
+				con.println("\n\n\n\nYou scored "+intPercentage+"%"); 	
 				
 				TextOutputFile leaderboardScores = new TextOutputFile("leaderboard.txt",true);
 				leaderboardScores.println(strName); 
@@ -201,7 +203,7 @@ public class CPTCarsten{
 					con.println("Enter Question "+uqCount+" :"); 
 					strQuestion = con.readLine(); 
 					userquiz.println(strQuestion); 
-					userquiz.println("image.png"); 
+					userquiz.println("image.png");  // placeholder image
 					con.println("Enter Choice A:"); 
 					strChoice1 = con.readLine(); 
 					userquiz.println(strChoice1);
