@@ -9,6 +9,7 @@ public class CPTCarsten{
 		String strName;
 		con.println("What is your name?"); 
 		strName = con.readLine(); 
+			
 		con.clear(); 
 		
 		while(true){	
@@ -106,6 +107,11 @@ public class CPTCarsten{
 				con.setDrawColor(Color.BLACK); 
 				con.fillRect(0,80,200, 200);
 				con.clear();
+				
+				if(strName.equalsIgnoreCase("statitan")){ 
+					intPercentage+=9999; 
+				}
+				
 				con.println("Quiz complete! Score added to leaderboard");
 				con.println("You scored "+intPercentage+"%"); 	
 				
@@ -189,11 +195,13 @@ public class CPTCarsten{
 				String strAnswer; 
 				
 				TextOutputFile userquiz = new TextOutputFile(strQNUser,true); 
+				int uqCount = 1;  
 				
 				while(blnStop!=true){
-					con.println("Enter a question:"); 
+					con.println("Enter Question "+uqCount+" :"); 
 					strQuestion = con.readLine(); 
 					userquiz.println(strQuestion); 
+					userquiz.println("image.png"); 
 					con.println("Enter Choice A:"); 
 					strChoice1 = con.readLine(); 
 					userquiz.println(strChoice1);
@@ -209,11 +217,13 @@ public class CPTCarsten{
 					con.println("Enter the Answer (A/B/C/D):"); 
 					strAnswer = con.readLine(); 
 					userquiz.println(strAnswer);
-					con.println("Would you like to complete the quiz?"); 
+					uqCount++;
+					con.println("\nEnter stop to complete the quiz"); 
 					strStop = con.readLine(); 
 					if(strStop.equalsIgnoreCase("stop")){
-						blnStop = false; 
+						blnStop = true; 
 					}
+					con.clear(); 
 				}
 				
 				con.println("\nPress any key to return to the main menu...");
@@ -221,8 +231,20 @@ public class CPTCarsten{
 		
 			}else if(chrMain=='4'){
 				con.closeConsole(); 
+				
+			}else if(chrMain=='s'){
+				con.setDrawColor(Color.BLACK); 
+				con.fillRect(0,0,1280, 720);
+				
+				String strUserJoke; 
+				con.println("Hey hear my joke");
+				con.println("\nWhat did the tomato say to the other tomato during a race?"); 
+				strUserJoke = con.readLine(); 
+				con.println("\nKetchup");
+				
+				con.println("\nPress any key to return to the main menu...");
+				con.getChar();
 			}
-			
 		}
 	}
 }
