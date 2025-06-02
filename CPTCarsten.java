@@ -110,7 +110,9 @@ public class CPTCarsten{
 				con.println("You scored "+intPercentage+"%"); 	
 				
 				TextOutputFile leaderboardScores = new TextOutputFile("leaderboard.txt",true);
-				leaderboardScores.println(strName+"  |  "+strUserQuiz+"  |  "+intPercentage+" %");
+				leaderboardScores.println(strName); 
+				leaderboardScores.println(strUserQuiz); 
+				leaderboardScores.println(intPercentage); 
 				leaderboardScores.close(); 
 				
 				con.println("\nPress any key to return to the main menu...");
@@ -123,17 +125,100 @@ public class CPTCarsten{
 				con.println("Leaderboard:"); 
 				
 				TextInputFile leaderboardPrint = new TextInputFile("leaderboard.txt"); 
-				String strLBScores; 
+				String strLBName;
+				String strLBQuiz; 
+				int intLBPercent; 
+				int intLBCount = 0; 
 				
 				while(leaderboardPrint.eof()==false){
-					strLBScores = leaderboardPrint.readLine();
-					con.println(strLBScores); 
+					strLBName = leaderboardPrint.readLine();
+					strLBQuiz = leaderboardPrint.readLine(); 
+					intLBPercent = leaderboardPrint.readInt(); 
+					intLBCount++;
 				}
 				leaderboardPrint.close();
+				
+				String[][] leaderboard = new String[intLBCount][3]; 
+				
+				TextInputFile leaderboardRead = new TextInputFile("leaderboard.txt");
+				for (int i = 0; i < intLBCount; i++) {
+					leaderboard[i][0] = leaderboardRead.readLine();     
+					leaderboard[i][1] = leaderboardRead.readLine();     
+					leaderboard[i][2] = ""+leaderboardRead.readInt(); 
+				}
+				leaderboardRead.close();
+				
+				for (int i = 0; i < leaderboard.length - 1; i++) {
+					for (int j = 0; j < leaderboard.length - i - 1; j++) {
+						int score1 = Integer.parseInt(leaderboard[j][2]);
+						int score2 = Integer.parseInt(leaderboard[j + 1][2]);
+						if (score1 < score2) {
+							String[] temp = leaderboard[j];
+							leaderboard[j] = leaderboard[j + 1];
+							leaderboard[j + 1] = temp;
+						}
+					}
+				}
+				
+				for (int i = 0; i < leaderboard.length; i++) {
+					con.println((i + 1) + ". " + leaderboard[i][0] + ", " + leaderboard[i][1] + ", " + leaderboard[i][2] + " %");
+				}
 				
 				con.println("\nPress any key to return to the main menu...");
 				con.getChar(); 
 				
+			}else if(chrMain == '3'){ 
+				con.setDrawColor(Color.BLACK); 
+				con.fillRect(0,0,1280, 720);
+				
+				TextOutputFile quizname = new TextOutputFile("quizzes.txt",true);
+				String strQNUser; 
+				con.println("Enter Quiz Name (__.txt):"); 
+				strQNUser = con.readLine(); 
+				quizname.println(strQNUser); 
+				quizname.close();
+				
+				con.clear(); 
+				String strStop; 
+				boolean blnStop = false; 
+				String strQuestion; 
+				String strChoice1;
+				String strChoice2;
+				String strChoice3; 
+				String strChoice4; 
+				String strAnswer; 
+				
+				TextOutputFile userquiz = new TextOutputFile(strQNUser,true); 
+				
+				while(blnStop!=true){
+					con.println("Enter a question:"); 
+					strQuestion = con.readLine(); 
+					userquiz.println(strQuestion); 
+					con.println("Enter Choice A:"); 
+					strChoice1 = con.readLine(); 
+					userquiz.println(strChoice1);
+					con.println("Enter Choice B:"); 
+					strChoice2 = con.readLine(); 
+					userquiz.println(strChoice2);
+					con.println("Enter Choice C:"); 
+					strChoice3 = con.readLine(); 
+					userquiz.println(strChoice3);
+					con.println("Enter Choice D:"); 
+					strChoice4 = con.readLine(); 
+					userquiz.println(strChoice4);
+					con.println("Enter the Answer (A/B/C/D):"); 
+					strAnswer = con.readLine(); 
+					userquiz.println(strAnswer);
+					con.println("Would you like to complete the quiz?"); 
+					strStop = con.readLine(); 
+					if(strStop.equalsIgnoreCase("stop")){
+						blnStop = false; 
+					}
+				}
+				
+				con.println("\nPress any key to return to the main menu...");
+				con.getChar(); 
+		
 			}else if(chrMain=='4'){
 				con.closeConsole(); 
 			}

@@ -1,2 +1,21 @@
-Carsten  |  musicartists.txt  |  80 %
-Carsten  |  sportsplayers.txt  |  70 %
+Carsten
+musicartists.txt
+30
+Carsten
+musicartists.txt
+100
+Carsten
+musicartists.txt
+10
+John
+musicartists.txt
+90
+Jane
+worldmonuments.txt
+80
+Jane
+sportsplayers.txt
+30
+John
+sportsplayers.txt
+100
