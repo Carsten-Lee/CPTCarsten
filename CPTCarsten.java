@@ -119,8 +119,24 @@ public class CPTCarsten{
 				}
 				
 				BufferedImage imgComplete = con.loadImage("COMPLETE.png");
-				con.drawImage(imgComplete,0,0);
+				int intX = 1280; 
+				int intY = 0; 
+				
+				while(intX>0){ 
+					con.setDrawColor(Color.BLACK); 
+					con.fillRect(0, 0, 1280, 720);
+					con.drawImage(imgComplete, intX, intY);
+					con.repaint();
+					
+					intX -= 20;
+					con.sleep(17);
+				}
+				con.setDrawColor(Color.BLACK); 
+				con.fillRect(0, 0, 1280, 720);
+				con.drawImage(imgComplete, 0, 0);
 				con.repaint();
+				
+				
 				con.println("\n\n\n\nYou scored "+intPercentage+"%"); 	
 				
 				// Write the score into leaderboard.txt
