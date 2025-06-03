@@ -20,6 +20,7 @@ public class CPTCarsten{
 			
 			char chrMain = con.getChar();  
 			if(chrMain=='1'){
+				// Clear the image 
 				con.setDrawColor(Color.BLACK); 
 				con.fillRect(0,0,1280, 720);
 				
@@ -35,7 +36,7 @@ public class CPTCarsten{
 				strUserQuiz = con.readLine(); 
 				quizlist.close(); 
 				
-				// Step 1: Count number of questions (7 lines per question)
+				// Count number of questions
 				TextInputFile countQuestions = new TextInputFile(strUserQuiz);
 				int intLineCount = 0;
 				while (!countQuestions.eof()) {
@@ -46,10 +47,10 @@ public class CPTCarsten{
 				countQuestions.close(); 
 				System.out.println("# of questions: " + intQuestionCount);
 
-				// Step 2: Create 2D array [# of questions][8 columns] (one extra for the image) 
+				// Create 2D array [# of questions][8 columns] (one extra for the image) 
 				String[][] strQuiz = new String[intQuestionCount][8];
 
-				// Step 3: Load data into array
+				// Load data into array
 				TextInputFile quizFile = new TextInputFile(strUserQuiz);
 				for (int i = 0; i < intQuestionCount; i++) {
 					for (int j = 0; j < 7; j++) {
@@ -60,7 +61,7 @@ public class CPTCarsten{
 				}
 				quizFile.close();
 
-				// Step 4: Bubble sort based on column 7
+				// Bubble sort based on column 7 (randomized numbers)
 				for (int i = 0; i < strQuiz.length - 1; i++) {
 					for (int j = 0; j < strQuiz.length - i - 1; j++) {
 						int num1 = Integer.parseInt(strQuiz[j][7]);
@@ -75,7 +76,7 @@ public class CPTCarsten{
 					}
 				}
 					
-				// Step 5: Ask questions and calculate score
+				// Ask questions and calculate score
 				int intScore = 0;
 				int intPercentage = 0; 
 				for (int i = 0; i < strQuiz.length; i++) {
@@ -110,6 +111,7 @@ public class CPTCarsten{
 				con.fillRect(0,80,200, 200);
 				con.clear();
 				
+				// If the name is statitan, add a number from 1-1000 onto the user's score
 				System.out.println(strName);
 				if(strName.equalsIgnoreCase("statitan")){ 
 					int intStatitan = (int)(Math.random() * (1000 - 1 + 1)) + 1;
@@ -121,6 +123,7 @@ public class CPTCarsten{
 				con.repaint();
 				con.println("\n\n\n\nYou scored "+intPercentage+"%"); 	
 				
+				// Write the score into leaderboard.txt
 				TextOutputFile leaderboardScores = new TextOutputFile("leaderboard.txt",true);
 				leaderboardScores.println(strName); 
 				leaderboardScores.println(strUserQuiz); 
@@ -142,6 +145,7 @@ public class CPTCarsten{
 				int intLBPercent; 
 				int intLBCount = 0; 
 				
+				// Count how many scores there are 
 				while(leaderboardPrint.eof()==false){
 					strLBName = leaderboardPrint.readLine();
 					strLBQuiz = leaderboardPrint.readLine(); 
@@ -152,6 +156,7 @@ public class CPTCarsten{
 				
 				String[][] leaderboard = new String[intLBCount][3]; 
 				
+				//  Read the details of the scores (Name, Quiz, Score)
 				TextInputFile leaderboardRead = new TextInputFile("leaderboard.txt");
 				for (int i = 0; i < intLBCount; i++) {
 					leaderboard[i][0] = leaderboardRead.readLine();     
@@ -160,6 +165,7 @@ public class CPTCarsten{
 				}
 				leaderboardRead.close();
 				
+				// Bubble sort based on coloumn 2 (quiz scores) 
 				for (int i = 0; i < leaderboard.length - 1; i++) {
 					for (int j = 0; j < leaderboard.length - i - 1; j++) {
 						int score1 = Integer.parseInt(leaderboard[j][2]);
@@ -172,6 +178,7 @@ public class CPTCarsten{
 					}
 				}
 				
+				// Limit the number of scores shown to 10 
 				int intMaxLength = Math.min(10, leaderboard.length);
 				for (int i = 0; i < intMaxLength; i++) {
 					con.println((i + 1) + ". " + leaderboard[i][0] + ", " + leaderboard[i][1] + ", " + leaderboard[i][2] + " %");
@@ -185,6 +192,8 @@ public class CPTCarsten{
 				con.fillRect(0,0,1280, 720);
 				
 				TextOutputFile quizname = new TextOutputFile("quizzes.txt",true);
+				
+				// Get the name of the quiz and write to quizzes.txt file
 				String strQNUser; 
 				con.println("Enter Quiz Name (include .txt at the end):"); 
 				strQNUser = con.readLine(); 
@@ -204,6 +213,7 @@ public class CPTCarsten{
 				TextOutputFile userquiz = new TextOutputFile(strQNUser,true); 
 				int uqCount = 1;  
 				
+				// Get the questions and choices until user types "stop" 
 				while(blnStop!=true){
 					con.println("Enter Question "+uqCount+" :"); 
 					strQuestion = con.readLine(); 
