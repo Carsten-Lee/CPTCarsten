@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 
 public class CPTCarsten{ 
 	public static void main(String[] args){
-		Console con = new Console(1280,720);
+		Console con = new Console("Multiple Choice",1280,720);
 		
 		String strName;
 		con.println("What is your name?"); 
@@ -44,6 +44,7 @@ public class CPTCarsten{
 				}
 				int intQuestionCount = intLineCount / 7;
 				countQuestions.close(); 
+				System.out.println("# of questions: " + intQuestionCount);
 
 				// Step 2: Create 2D array [# of questions][8 columns] (one extra for the image) 
 				String[][] strQuiz = new String[intQuestionCount][8];
@@ -69,6 +70,7 @@ public class CPTCarsten{
 							String[] temp = strQuiz[j];
 							strQuiz[j] = strQuiz[j + 1];
 							strQuiz[j + 1] = temp;
+							System.out.println("Swap " + strQuiz[j][0] + " with " + strQuiz[j + 1][0]);
 						}
 					}
 				}
@@ -108,8 +110,10 @@ public class CPTCarsten{
 				con.fillRect(0,80,200, 200);
 				con.clear();
 				
+				System.out.println(strName);
 				if(strName.equalsIgnoreCase("statitan")){ 
-					intPercentage+=9999; 
+					int intStatitan = (int)(Math.random() * (1000 - 1 + 1)) + 1;
+					intPercentage+=intStatitan; 
 				}
 				
 				BufferedImage imgComplete = con.loadImage("COMPLETE.png");
@@ -130,7 +134,7 @@ public class CPTCarsten{
 				con.setDrawColor(Color.BLACK); 
 				con.fillRect(0,0,1280, 720);
 				
-				con.println("Leaderboard:"); 
+				con.println("Leaderboard (Top 10):"); 
 				
 				TextInputFile leaderboardPrint = new TextInputFile("leaderboard.txt"); 
 				String strLBName;
@@ -168,7 +172,8 @@ public class CPTCarsten{
 					}
 				}
 				
-				for (int i = 0; i < leaderboard.length; i++) {
+				int intMaxLength = Math.min(10, leaderboard.length);
+				for (int i = 0; i < intMaxLength; i++) {
 					con.println((i + 1) + ". " + leaderboard[i][0] + ", " + leaderboard[i][1] + ", " + leaderboard[i][2] + " %");
 				}
 				
@@ -181,7 +186,7 @@ public class CPTCarsten{
 				
 				TextOutputFile quizname = new TextOutputFile("quizzes.txt",true);
 				String strQNUser; 
-				con.println("Enter Quiz Name (__.txt):"); 
+				con.println("Enter Quiz Name (include .txt at the end):"); 
 				strQNUser = con.readLine(); 
 				quizname.println(strQNUser); 
 				quizname.close();
@@ -246,7 +251,30 @@ public class CPTCarsten{
 				
 				con.println("\nPress any key to return to the main menu...");
 				con.getChar();
+				
+			}else if(chrMain=='h'){
+				con.setDrawColor(Color.BLACK); 
+				con.fillRect(0,0,1280, 720);
+				
+				con.println("Instructions:"); 
+				con.println("\nPlay:"); 
+				con.println("1. Enter the name of the desired quiz, make sure to include the .txt at the end"); 
+				con.println("2. Press the letter on your keyboard based on what you think the answer is (A/B/C/D),\ncapitalization does not matter"); 
+				con.println("3. Repeat until the end of the quiz which will show QUIZ COMPLETE along with your score"); 
+				con.println("4. Press any key to return to the main menu"); 
+				con.println("\nAdd Quiz:");
+				con.println("1. Enter what you want to name your quiz, make sure to include .txt at the end"); 
+				con.println("2. Type your question"); 
+				con.println("3. Type the 4 possible choices to choose from"); 
+				con.println("4. Enter the answer of the question (A/B/C/D), capitalization does not matter"); 
+				con.println("5. If you are done creating the quiz, enter STOP, capitalization does not matter as well"); 
+				con.println("6. Repeat this process until you finish creating the quiz"); 
+				con.println("7. Press any key to return to the main menu"); 
+			
+				con.println("\n\nPress any key to return to the main menu...");
+				con.getChar(); 
 			}
+			
 		}
 	}
 }
