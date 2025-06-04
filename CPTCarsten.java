@@ -285,7 +285,8 @@ public class CPTCarsten{
 				con.println("Instructions:"); 
 				con.println("\nPlay:"); 
 				con.println("1. Enter the name of the desired quiz, make sure to include the .txt at the end"); 
-				con.println("2. Press the letter on your keyboard based on what you think the answer is (A/B/C/D),\ncapitalization does not matter"); 
+				con.println("2. Press the letter on your keyboard based on what you think the answer is (A/B/C/D),"); 
+				con.println("   capitalization does not matter"); 
 				con.println("3. Repeat until the end of the quiz which will show QUIZ COMPLETE along with your score"); 
 				con.println("4. Press any key to return to the main menu"); 
 				con.println("\nAdd Quiz:");
