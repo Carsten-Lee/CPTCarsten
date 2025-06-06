@@ -113,10 +113,7 @@ public class CPTCarsten{
 				
 				// If the name is statitan, add a number from 1-1000 onto the user's score
 				System.out.println(strName);
-				if(strName.equalsIgnoreCase("statitan")){ 
-					int intStatitan = (int)(Math.random() * (1000 - 1 + 1)) + 1;
-					intPercentage+=intStatitan; 
-				}
+				intPercentage = MultipleChoiceTools.statitan(strName, intPercentage); 
 				
 				BufferedImage imgComplete = con.loadImage("COMPLETE.png");
 				int intX = 1280; 
@@ -135,7 +132,6 @@ public class CPTCarsten{
 				con.fillRect(0, 0, 1280, 720);
 				con.drawImage(imgComplete, 0, 0);
 				con.repaint();
-				
 				
 				con.println("\n\n\n\nYou scored "+intPercentage+"%"); 	
 				
@@ -263,7 +259,16 @@ public class CPTCarsten{
 				con.getChar(); 
 		
 			}else if(chrMain=='4'){
-				con.closeConsole(); 
+				BufferedImage imgQuit = con.loadImage("QUIT.png");
+				con.drawImage(imgQuit,0,0);
+				con.repaint();
+				char chrQuit = con.getChar();  
+				if(chrQuit=='1'){
+					con.closeConsole(); 
+				}else if(chrQuit=='2'){
+					con.drawImage(imgMenu,0,0);
+					con.repaint();
+				}
 				
 			}else if(chrMain=='s'){
 				con.setDrawColor(Color.BLACK); 
