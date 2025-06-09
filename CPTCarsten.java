@@ -19,6 +19,7 @@ public class CPTCarsten{
 			con.repaint();
 			
 			char chrMain = con.getChar();  
+			char chrReturn;
 			if(chrMain=='1'){
 				// Clear the image 
 				con.setDrawColor(Color.BLACK); 
@@ -93,9 +94,9 @@ public class CPTCarsten{
 					con.println("C) " + strQuiz[i][4]);
 					con.println("D) " + strQuiz[i][5]);
 					con.print("Your answer (A/B/C/D): ");
-					String answer = con.readLine();
+					String strAnswer = con.readLine();
 
-					if (answer.equalsIgnoreCase(strQuiz[i][6])) {
+					if (strAnswer.equalsIgnoreCase(strQuiz[i][6])) {
 						con.println("Correct!");
 						intScore++;
 					} else {
@@ -143,7 +144,7 @@ public class CPTCarsten{
 				leaderboardScores.close(); 
 				
 				con.println("\nPress any key to return to the main menu...");
-				con.getChar();
+				chrReturn = con.getChar();
 				
 			}else if(chrMain=='2'){
 				con.setDrawColor(Color.BLACK); 
@@ -197,7 +198,7 @@ public class CPTCarsten{
 				}
 				
 				con.println("\nPress any key to return to the main menu...");
-				con.getChar(); 
+				chrReturn = con.getChar(); 
 				
 			}else if(chrMain == '3'){ 
 				con.setDrawColor(Color.BLACK); 
@@ -220,7 +221,7 @@ public class CPTCarsten{
 				String strChoice2;
 				String strChoice3; 
 				String strChoice4; 
-				String strAnswer; 
+				String strAddAnswer; 
 				
 				TextOutputFile userquiz = new TextOutputFile(strQNUser,true); 
 				int uqCount = 1;  
@@ -244,8 +245,8 @@ public class CPTCarsten{
 					strChoice4 = con.readLine(); 
 					userquiz.println(strChoice4);
 					con.println("Enter the Answer (A/B/C/D):"); 
-					strAnswer = con.readLine(); 
-					userquiz.println(strAnswer);
+					strAddAnswer = con.readLine(); 
+					userquiz.println(strAddAnswer);
 					uqCount++;
 					con.println("\nEnter stop to complete the quiz"); 
 					strStop = con.readLine(); 
@@ -256,7 +257,7 @@ public class CPTCarsten{
 				}
 				
 				con.println("\nPress any key to return to the main menu...");
-				con.getChar(); 
+				chrReturn = con.getChar(); 
 		
 			}else if(chrMain=='4'){
 				BufferedImage imgQuit = con.loadImage("QUIT.png");
@@ -281,7 +282,7 @@ public class CPTCarsten{
 				con.println("\nKetchup");
 				
 				con.println("\nPress any key to return to the main menu...");
-				con.getChar();
+				chrReturn = con.getChar();
 				
 			}else if(chrMain=='h'){
 				con.setDrawColor(Color.BLACK); 
@@ -304,7 +305,7 @@ public class CPTCarsten{
 				con.println("7. Press any key to return to the main menu"); 
 			
 				con.println("\n\nPress any key to return to the main menu...");
-				con.getChar(); 
+				chrReturn = con.getChar(); 
 			}
 			
 		}

@@ -34,3 +34,12 @@ sportsplayers.txt
 Richard
 worldmonuments.txt
 90
+Sachin
+worldmonuments.txt
+50
+Carsten
+musicartists.txt
+30
+Carsten
+sportsplayers.txt
+0
