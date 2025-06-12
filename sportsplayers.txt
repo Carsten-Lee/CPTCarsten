@@ -68,3 +68,17 @@ Tua Tagovailoa
 Trevor Lawrence
 Joe Burrow
 D
+Which player played for the New England Patriots?
+sportsplayers/newengland.png
+Tom Brady
+Peyton Manning
+Drew Brees
+Russell Wilson
+A
+Which player played for the Chicago Bulls?
+sportsplayers/chicagobulls.png
+Kevin Garnett
+Michael Jordan
+Shaquille O’Neal
+Luka Doncic
+B

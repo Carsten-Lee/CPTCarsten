@@ -260,6 +260,7 @@ public class CPTCarsten{
 				chrReturn = con.getChar(); 
 		
 			}else if(chrMain=='4'){
+				// Quit Confirm 
 				BufferedImage imgQuit = con.loadImage("QUIT.png");
 				con.drawImage(imgQuit,0,0);
 				con.repaint();
@@ -275,6 +276,7 @@ public class CPTCarsten{
 				con.setDrawColor(Color.BLACK); 
 				con.fillRect(0,0,1280, 720);
 				
+				// Secret Menu
 				String strUserJoke; 
 				con.println("Hey hear my joke");
 				con.println("\nWhat did the tomato say to the other tomato during a race?"); 
@@ -288,6 +290,7 @@ public class CPTCarsten{
 				con.setDrawColor(Color.BLACK); 
 				con.fillRect(0,0,1280, 720);
 				
+				// Help Menu 
 				con.println("Instructions:"); 
 				con.println("\nPlay:"); 
 				con.println("1. Enter the name of the desired quiz, make sure to include the .txt at the end"); 
